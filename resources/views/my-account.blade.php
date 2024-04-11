@@ -1,5 +1,5 @@
 @extends('app')
-@section('title', 'About')
+@section('title', 'My Account')
 
 @section('content')
     <section id="view-profile-reg">

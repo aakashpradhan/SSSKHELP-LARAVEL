@@ -1,5 +1,5 @@
 @extends('app')
-@section('title', 'About')
+@section('title', 'Donor Registration')
 
 @section('content')
     <section id="donors-registration">

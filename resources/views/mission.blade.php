@@ -1,5 +1,5 @@
 @extends('app')
-@section('title', 'About')
+@section('title', 'Mission')
 
 @section('content')
     <section id="mission-main" class="container">
