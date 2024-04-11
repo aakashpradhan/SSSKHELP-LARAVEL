@@ -1,6 +1,6 @@
 // Function to create age options
 function createAgeOptions() {
-    let selectAge = document.getElementById('select-age');
+    let selectAge = document.getElementById('age');
     if (selectAge) {
         for(let i = 18; i <= 60; i++) {
             let option = document.createElement('option');
@@ -9,7 +9,7 @@ function createAgeOptions() {
             selectAge.appendChild(option);
         }
     } else {
-        console.log('select-age element not found');
+        console.log('age element not found');
     }
 }
 

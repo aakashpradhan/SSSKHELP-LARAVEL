@@ -27,25 +27,25 @@
 
                 <tr>
                     <td>
-                        Vinod JKIAN
+                        {{ $validatedData['name'] }}
                     </td>
                     <td>
-                        Male
+                        {{ $validatedData['gender'] }}
                     </td>
                     <td>
-                        35 years
+                        {{ $validatedData['age'] }} years
                     </td>
                     <td>
-                        B+
+                        {{ $validatedData['blood_group'] }}
                     </td>
                     <td>
-                        Country: India,<br>
-                        State/UT/Province/Region: Jammu & Kashmir,<br>
-                        City District: Rajouri,<br>
-                        Tehsil/Locality/Area: Sunderbani
+                        Country: {{ $validatedData['country'] }},<br>
+                        State/UT/Province/Region: {{ $validatedData['state'] }},<br>
+                        City District: {{ $validatedData['district'] }},<br>
+                        Tehsil/Locality/Area: {{ $validatedData['tehsil'] }}
                     </td>
                     <td>
-                        9797867115
+                        {{ $validatedData['contact'] }}
                     </td>
                 </tr>
             </table>
@@ -59,10 +59,12 @@
         </div>
 
         <div class="buttons">
-            <input type="button" value="Back">
-            <input type="submit" value="Submit">
-            <input type="button" value="Exit">
-
+            <form action="{{ route('register') }}" method="POST">
+                @csrf
+                <input type="button" value="Back">
+                <input type="submit" value="Submit">
+                <input type="button" value="Exit">
+            </form>
         </div>
     </section>
 

@@ -29,11 +29,27 @@
 
 
             </div>
-            <div class="donor-login">
-                <a href="/donors-login">Donor Login</a>
-                <a href="/my-account">My Account</a>
 
+            <!-- Your Blade Template -->
+            <div class="donor-login">
+                <a href="/donors-login">Login</a>
+                @auth
+                    <a href="{{ route('logout') }}"
+                        onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        @csrf
+                    </form>
+                    <a href="/my-account">My Account</a>
+                @endauth
             </div>
+
+            @auth
+                <p>User is authenticated!</p>
+            @endauth
+
+
+
+
         </div>
         <nav>
             <div class="logo">

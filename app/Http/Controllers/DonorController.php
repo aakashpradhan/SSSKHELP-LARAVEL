@@ -1,6 +1,5 @@
 <?php
 
-// app/Http/Controllers/DonorController.php
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
@@ -10,27 +9,23 @@ class DonorController extends Controller
 {
     public function store(Request $request)
     {
-        $validatedData = $request->validate([
-            'country' => 'required',
-            'contact' => 'required',
-            'dob' => 'required|date',
-            'name' => 'required',
-            'gender' => 'required',
-            'age' => 'required',
-            'blood_group' => 'required',
-            'address' => 'required',
-            'state' => 'required',
-            'district' => 'required',
-            'tehsil' => 'required',
-        ]);
+        $validatedData = $request->session()->get('validatedData');
 
+        if (!$validatedData) {
+            return redirect()->route('donors-registration')->with('error', 'Validation failed. Please fill the form again.');
+        }
+
+        // Store the validated data in the database
         Donor::create($validatedData);
-        return redirect()->back()->with('success', 'Donor registered successfully.');
+
+        // Clear the validated data from the session
+        $request->session()->forget('validatedData');
+
+        return redirect()->route('donors-registration')->with('success', 'Donor registered successfully.');
     }
 
     public function profile_preview(Request $request)
     {
-        // Validate the incoming data
         $validatedData = $request->validate([
             'country' => 'required',
             'contact' => 'required',
@@ -45,8 +40,9 @@ class DonorController extends Controller
             'tehsil' => 'required',
         ]);
 
+        // Store the validated data in the session
+        $request->session()->put('validatedData', $validatedData);
 
-        // Pass the validated data directly to the view
         return view('profile-preview', compact('validatedData'));
     }
 }

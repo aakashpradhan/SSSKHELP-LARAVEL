@@ -4,6 +4,13 @@
 @section('content')
     <section id="donors-registration">
         <h2>New Registration</h2>
+        <div class="message">
+            @if (session('success'))
+                <div class="alert alert-success">
+                    {{ session('success') }}
+                </div>
+            @endif
+        </div>
         <form method="post" action="{{ route('profile-preview') }}" id="donors-registration-form">
             @csrf
 
@@ -316,7 +323,15 @@
             <div class="reg-form-field">
                 <label for="blood_group">Blood Group<span class="required">*</span>:</label>
                 <select name="blood_group" id="blood_group" placeholder="Select Your Blood Group">
-                    <!-- Populate with appropriate options -->
+                    <option value="Select Blood Group">Select Blood Group</option>
+                    <option value="A+">A+</option>
+                    <option value="B+">B+</option>
+                    <option value="AB+">AB+</option>
+                    <option value="O-">O+</option>
+                    <option value="A-">A-</option>
+                    <option value="B-">B-</option>
+                    <option value="AB-">AB-</option>
+                    <option value="O-">O-</option>
                 </select>
                 @error('blood_group')
                     <p class="form-error-message">{{ $message }}</p>
