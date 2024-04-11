@@ -46,7 +46,7 @@ Route::get('/donors-login', function () {
 Route::post('/donors-login', [LoginController::class, 'login'])->name('donors-login');
 
 Route::post('/login', [LoginController::class, 'login'])->name('login');
-Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+Route::match(['get', 'post'], '/logout', [LoginController::class, 'logout'])->name('logout');
 
 
 Route::get('/donors-registration', function () {

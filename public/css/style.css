@@ -86,11 +86,13 @@ header nav{
 
 /* main menu */
 
-.main-menu{
+.main-menu ul{
     display: flex;
     justify-content: space-between;
-    padding: 10px;
     background-color: var(--primary);
+    overflow-y: auto; /* Enable vertical scrolling */
+    margin: 0;
+
 
 
 }
@@ -101,7 +103,7 @@ header nav{
     list-style: none;
     font-weight:600;
     line-height: 1.2;
-    padding: 5px;
+    padding: 10px;
 
 }
 
@@ -112,6 +114,15 @@ header nav{
     text-transform: uppercase;
     color: var(--secondary);
 
+}
+
+.main-menu ul::-webkit-scrollbar{
+  display: none;
+  
+  }
+
+  .main-menu li{
+    white-space: nowrap; /* Prevent the text from wrapping */
 }
 
 /*logo */
@@ -234,6 +245,7 @@ display: flex;
 justify-content: space-between;
 align-items: center;
 padding: 48px 16px;
+font: var(--subtitle);
 background-color: var(--secondary);
 }
 
@@ -404,15 +416,17 @@ table{
     padding: 12px;
     margin-bottom: 20px;
     border: var(--border);
+    width: 250px;
 
 }
 
 /* form select */
 
-#donors-registration-form select{
+#donors-registration-form select, #donors-login-form select{
     padding: 12px;
     margin-bottom: 20px;
     border: var(--border);
+    width: 250px;
 
 
 }
@@ -966,3 +980,95 @@ marquee{
     }
   }
   
+
+  /* Add this at the end of your CSS file */
+
+/* Mobile responsive styles */
+@media only screen and (max-width: 768px) {
+  body {
+      font-size: 14px; /* Adjust the base font size for smaller screens */
+  }
+
+  .container {
+      padding: 16px; /* Adjust container padding for smaller screens */
+  }
+
+
+  .main-menu ul{
+    justify-content:inherit !important;
+    padding: 0 5px;
+
+}
+
+  /* Adjust logo size for smaller screens */
+  .logo img {
+      max-width: 120px;
+  }
+
+
+  /* Adjust donation links grid for smaller screens */
+  #donation-section {
+      grid-template-columns: repeat(1, 1fr);
+  }
+
+  /* Adjust about section grid for smaller screens */
+  #about {
+      grid-template-columns: repeat(1, 1fr);
+  }
+
+  /* Adjust form max-width for smaller screens */
+  #donors-registration-form,
+  #donors-login-form {
+      max-width: 100%;
+  }
+
+  /* Adjust footer top row grid for smaller screens */
+  .footer-top-row {
+      grid-template-columns: 1fr;
+      gap: 16px;
+      justify-content: center;
+  }
+
+  /* Adjust footer social icons size for smaller screens */
+  .footer-social-icons i {
+      font-size: 18px;
+  }
+
+  /* Adjust mission list grid for smaller screens */
+  .mission-list {
+      grid-template-columns: repeat(1, 1fr);
+  }
+
+  /* Adjust contact form container grid for smaller screens */
+  .contact-form-container {
+      grid-template-columns: 1fr;
+  }
+
+  #humanity p{
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 32px;
+    text-align: center;
+    }
+}
+#wbds{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+#wbds img{
+  max-width: 70%;
+  background-repeat: 5px;
+}
+
+.wbds-content img{
+  max-width: 50px !important;
+}
+
+
+.wbds-content h2{
+margin-top: 0;}

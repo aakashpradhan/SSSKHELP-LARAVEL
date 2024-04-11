@@ -7,7 +7,7 @@
         <form action="{{ route('donors-login') }}" id="donors-login-form" method="POST">
             @csrf
 
-            <div class="reg-form-field">
+            <div class="login-form-field">
                 <label for="country">Country<span class="required">*</span>:</label>
                 <select id="country" name="country">
                     <option value="" disabled selected>Select Your Country</option>
@@ -264,7 +264,7 @@
             </div>
 
 
-            <div class="reg-form-field">
+            <div class="login-form-field">
                 <label for="contact">Mobile No.<span class="required">*</span>:</label>
                 <input type="text" name="contact" id="contact" placeholder="Enter Your Mobile No."
                     value="{{ old('contact') }}">
@@ -273,7 +273,7 @@
                 @enderror
             </div>
 
-            <div class="reg-form-field">
+            <div class="login-form-field">
                 <label for="dob">Date of Birth<span class="required">*</span>:</label>
                 <input type="date" name="dob" id="dob" placeholder="Enter Your Date of Birth"
                     value="{{ old('dob') }}">
@@ -281,8 +281,21 @@
                     <p class="form-error-message">{{ $message }}</p>
                 @enderror
             </div>
+            <div class="login-form-sumbit">
+                <input type="submit" value="Submit" class="button">
+            </div>
+            <div class="login-reg-block">
+                <p>Don't have an account?</p>
+                <p> <a href="{{ route('donors-registration') }}">Register Here</a>
+                </p>
+            </div>
 
-            <input type="submit" value="Submit" class="button">
         </form>
+        @if (session('error'))
+            <div class="alert alert-danger">
+                {{ session('error') }}
+            </div>
+        @endif
+
     </section>
 @endsection

@@ -36,7 +36,7 @@ class LoginController extends Controller
         } else {
             // Authentication failed
             // Redirect back to the login page with an error message
-            return redirect()->route('donor-login')->with('error', 'Invalid credentials. Please try again.');
+            return redirect()->route('donors-login')->with('error', 'Invalid credentials. Please try again.');
         }
     }
 

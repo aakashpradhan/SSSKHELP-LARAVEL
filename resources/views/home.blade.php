@@ -33,7 +33,7 @@
                 05-08-2003. This Trust is founded recently in 2023 and is situated at Village Kalideh Bhajwal, Tehsil
                 Sunderbani, District Rajouri of Jammu and Kashmir Union Territory in India.
             </p>
-            <a href="about.php" class="about-button button">Learn More</a>
+            <a href="/about" class="about-button button">Learn More</a>
         </div>
         <div class="about-image">
             <div class="blob"></div>
@@ -47,7 +47,7 @@
             <h3>
                 For Emergency Patients
             </h3>
-            <a href="" class="button">
+            <a href="/donors-list" class="button">
                 Find Blood Donors
             </a>
         </div>
@@ -56,7 +56,7 @@
             <h3>
                 For Donors Before Blood Donation
             </h3>
-            <a href="" class="button">
+            <a href="/donors-registration" class="button">
                 Register as a Blood Donor
             </a>
         </div>
@@ -66,7 +66,7 @@
                 For Donors After Blood Donation
 
             </h3>
-            <a href="" class="button">
+            <a href="/delete-registration" class="button">
                 Delete Your Registration
 
             </a>
@@ -84,7 +84,7 @@
             compassion towards other beings. The real truth of life is death. Humanity helps us to know the truth of life.
 
         </p>
-        <a href="humanity-social-service.php" class="button">Learn More</a>
+        <a href="/humanity-social-service" class="button">Learn More</a>
     </section>
 
 
@@ -95,11 +95,13 @@
         <div class="wbds-content">
             <img src="{{ url('images/donate-blood.png') }}" alt="">
             <h2>World Blood Donation Society</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat aspernatur eligendi sit nemo, eos explicabo
-                sapiente vero illum natus maxime aut neque ratione eveniet perferendis, suscipit dolore repudiandae at earum
-                laborum possimus quam optio magni quasi similique! Delectus, architecto exercitationem reprehenderit at
-                ducimus fugiat animi blanditiis velit asperiores numquam quaerat.</p>
-            <a href="wbds.php" class="button">Learn More</a>
+            <p>World Blood Donation Society (WBDS) is a Voluntarily Social service organization. It is a kind, motivated and
+                helping society which works to save lives of emergency patients. It is a group of Voluntarily unpaid blood
+                donors who donate their blood freely without receiving money or any other form of payment. Such social
+                workers donate their blood to save the lives of emergency patients, accident Victims, and Surgical and
+                cancer patients. Every drop of blood is a gift of life. Blood is the most precious gift that anyone can give
+                to another person.</p>
+            <a href="/wbds" class="button">Learn More</a>
         </div>
     </section>
 

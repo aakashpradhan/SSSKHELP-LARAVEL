@@ -47,6 +47,16 @@
                 <p>User is authenticated!</p>
             @endauth
 
+            @if (session('success'))
+                <div class="alert alert-success">
+                    <a href="{{ route('my-account') }}">My Account</a>
+                    <a href="{{ route('logout') }}">Logout</a>
+
+                </div>
+            @endif
+
+
+
 
 
 
@@ -58,22 +68,22 @@
                 </a>
             </div>
             <div class="main-menu">
-                <li><a href="/">Home</a></li>
-                <li><a href="/about">About</a></li>
-                <li><a href="/mission">Mission</a></li>
-                <li><a href="/humanity-social-service">Humanity & Social Service</a></li>
-                <li><a href="/wbds">World Blood Donation Society - WBDS</a></li>
-                <li><a href="/gallery">Gallery</a></li>
-                <li><a href="/contact">Contact</a></li>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/mission">Mission</a></li>
+                    <li><a href="/humanity-social-service">Humanity & Social Service</a></li>
+                    <li><a href="/wbds">World Blood Donation Society - WBDS</a></li>
+                    <li><a href="/gallery">Gallery</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                </ul>
             </div>
         </nav>
     </header>
 
     <section id="page-title">
         <div class="page-title">
-            <?php
-            
-            ?>
+            @yield('title')
         </div>
         <div class="breadcrumbs">
             <?php

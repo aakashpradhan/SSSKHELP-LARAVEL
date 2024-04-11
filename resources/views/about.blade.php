@@ -13,7 +13,6 @@
                 05-08-2003. This Trust is founded recently in 2023 and is situated at Village Kalideh Bhajwal, Tehsil
                 Sunderbani, District Rajouri of Jammu and Kashmir Union Territory in India.
             </p>
-            <a href="/about" class="about-button button">Learn More</a>
         </div>
         <div class="about-image">
             <div class="blob"></div>
