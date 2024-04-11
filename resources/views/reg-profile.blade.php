@@ -1,4 +1,6 @@
-@include('includes.header')
+@extends('app')
+@section('title', 'About')
 
+@section('content')
 
-@include('includes.footer')
+@endsection

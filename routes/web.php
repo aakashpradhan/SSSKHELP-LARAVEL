@@ -1,10 +1,11 @@
 <?php
 
+use App\Http\Controllers\DonorController;
 use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', function () {
-    return view('index');
+    return view('app');
 });
 
 Route::get('/about', function () {
@@ -82,3 +83,6 @@ Route::get('/view-profile', function () {
 Route::get('/wbds', function () {
     return view('wbds');
 });
+
+
+Route::post('/profile-preview', [DonorController::class, 'profile_preview'])->name('profile-preview');

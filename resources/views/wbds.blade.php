@@ -1,4 +1,6 @@
-@include('includes.header')
+@extends('app')
+@section('title', 'World Blood Donation Society')
 
+@section('content')
 
-@include('includes.footer')
+@endsection
