@@ -372,7 +372,6 @@
 
             <div class="buttons">
                 <a href="/donors-login"><input class="button" type="button" value="Back"></a>
-
                 <input class="button" type="submit" value="Next">
             </div>
 

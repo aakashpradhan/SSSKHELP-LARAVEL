@@ -34,9 +34,18 @@
             <div class="donor-login">
                 @if (Route::has('login'))
                     @auth
-                        <a href="{{ url('/dashboard') }}">
-                            Dashboard
+                        <a href="{{ url('/view-profile') }}">
+                            View Profile
                         </a>
+                        <form method="POST" action="{{ route('logout') }}">
+                            @csrf
+
+                            <a href="{{ route('logout') }}"
+                                onclick="event.preventDefault();
+                                            this.closest('form').submit();">
+                                {{ __('Log Out') }}
+                            </a>
+                        </form>
                     @else
                         <a href="{{ route('login') }}">
                             Log in
@@ -49,6 +58,9 @@
                         @endif
                     @endauth
                 @endif
+
+
+
             </div>
         </div>
         <nav>

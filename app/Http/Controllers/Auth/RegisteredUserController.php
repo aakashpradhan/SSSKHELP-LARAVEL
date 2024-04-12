@@ -29,22 +29,37 @@ class RegisteredUserController extends Controller
      */
     public function store(Request $request): RedirectResponse
     {
-        $request->validate([
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.User::class],
-            'password' => ['required', 'confirmed', Rules\Password::defaults()],
-        ]);
+        $validatedData = json_decode($request->validatedData, true);
 
-        $user = User::create([
-            'name' => $request->name,
-            'email' => $request->email,
-            'password' => Hash::make($request->password),
-        ]);
+
+        $user = User::create($validatedData);
+
 
         event(new Registered($user));
 
         Auth::login($user);
 
-        return redirect(route('dashboard', absolute: false));
+        return redirect(route('view-profile', absolute: false));
+    }
+
+
+    public function profile_preview(Request $request): \Illuminate\View\View
+    {
+        $validatedData = $request->validate([
+            'name' => ['required', 'string', 'max:255'],
+            'country' => ['nullable', 'string', 'max:255'],
+            'contact' => ['nullable', 'string', 'max:255'],
+            'dob' => ['nullable', 'date'],
+            'gender' => ['nullable', 'string', 'max:255'],
+            'age' => ['nullable', 'integer'],
+            'blood_group' => ['nullable', 'string', 'max:255'],
+            'address' => ['nullable', 'string', 'max:255'],
+            'state' => ['nullable', 'string', 'max:255'],
+            'district' => ['nullable', 'string', 'max:255'],
+            'tehsil' => ['nullable', 'string', 'max:255'],
+        ]);
+
+
+        return view('profile-preview', compact('validatedData'));
     }
 }

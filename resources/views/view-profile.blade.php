@@ -1,8 +1,12 @@
 @extends('app')
-@section('title', 'View Profile')
+@section('title', 'Profile')
 
 @section('content')
     <section id="view-profile-reg">
+        <img src="images/hero-banner.jpg" alt="" width="600px">
+        <h2><strong>(Registration Card)</strong></h2>
+        <h3>Donor's Registration in the World Blood Donation Society (WBDS)</h3>
+        <br>
 
         <div>
             <table id="table">
@@ -71,5 +75,11 @@
         </div>
 
     </section>
+
+    <div class="buttons">
+        <input type="button" value="Print" onclick="window.print()">
+        <input type="button" value="Delete my profile">
+
+    </div>
 
 @endsection

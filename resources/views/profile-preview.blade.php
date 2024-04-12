@@ -61,10 +61,15 @@
         <div class="buttons">
             <form action="{{ route('register') }}" method="POST">
                 @csrf
-                <input type="button" value="Back">
+                <input type="hidden" name="validatedData" value="{{ json_encode($validatedData) }}">
                 <input type="submit" value="Submit">
-                <input type="button" value="Exit">
             </form>
+            <a class="button" href="/" class="">
+                Exit
+            </a>
+            <a class="button" href="{{ route('register') }}" class="">
+                Back
+            </a>
         </div>
     </section>
 
