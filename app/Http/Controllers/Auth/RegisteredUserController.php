@@ -62,4 +62,29 @@ class RegisteredUserController extends Controller
 
         return view('profile-preview', compact('validatedData'));
     }
+
+    public function login()
+    {
+        return view('auth.login');
+    }
+
+    /*authenticate user */
+
+
+
+    public function validateUser(Request $request)
+    {
+        // Extract custom login fields from the request
+        $loginFields = $request->only('country', 'dob', 'contact');
+
+        // Attempt to authenticate the user using custom fields
+        if (Auth::guard()->attempt($loginFields)) {
+            // If authentication is successful, regenerate session and redirect to profile
+            $request->session()->regenerate();
+            return redirect()->route('view-profile')->with('message', 'You are now logged in');
+        }
+
+        // If authentication fails, redirect back with error message
+        return back()->withErrors(['invalid' => 'Invalid credentials']);
+    }
 }
