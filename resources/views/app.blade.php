@@ -32,34 +32,24 @@
 
             <!-- Your Blade Template -->
             <div class="donor-login">
-                <a href="/donors-login">Login</a>
-                @auth
-                    <a href="{{ route('logout') }}"
-                        onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                        @csrf
-                    </form>
-                    <a href="/my-account">My Account</a>
-                @endauth
+                @if (Route::has('login'))
+                    @auth
+                        <a href="{{ url('/dashboard') }}">
+                            Dashboard
+                        </a>
+                    @else
+                        <a href="{{ route('login') }}">
+                            Log in
+                        </a>
+
+                        @if (Route::has('register'))
+                            <a href="{{ route('register') }}">
+                                Register
+                            </a>
+                        @endif
+                    @endauth
+                @endif
             </div>
-
-            @auth
-                <p>User is authenticated!</p>
-            @endauth
-
-            @if (session('success'))
-                <div class="alert alert-success">
-                    <a href="{{ route('my-account') }}">My Account</a>
-                    <a href="{{ route('logout') }}">Logout</a>
-
-                </div>
-            @endif
-
-
-
-
-
-
         </div>
         <nav>
             <div class="logo">

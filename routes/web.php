@@ -1,9 +1,20 @@
 <?php
 
-use App\Http\Controllers\DonorController;
-use App\Http\Controllers\LoginController;
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DonorController;
 
+
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
 
 Route::get('/', function () {
     return view('home');
@@ -42,11 +53,6 @@ Route::get('/donors-list', function () {
 Route::get('/donors-login', function () {
     return view('donors-login');
 });
-
-Route::post('/donors-login', [LoginController::class, 'login'])->name('donors-login');
-
-Route::post('/login', [LoginController::class, 'login'])->name('login');
-Route::match(['get', 'post'], '/logout', [LoginController::class, 'logout'])->name('logout');
 
 
 Route::get('/donors-registration', function () {
@@ -96,3 +102,9 @@ Route::get('/wbds', function () {
 
 
 Route::post('/profile-preview', [DonorController::class, 'profile_preview'])->name('profile-preview');
+
+
+
+
+
+require __DIR__ . '/auth.php';
