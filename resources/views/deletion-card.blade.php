@@ -1,11 +1,12 @@
 @extends('app')
-@section('title', 'Profile')
+@section('title', 'Deletion Card')
 
 @section('content')
     <section id="view-profile-reg">
+        <input type="button" value="Print">
         <img src="images/hero-banner.jpg" alt="" width="600px">
-        <h2><strong>(Registration Card)</strong></h2>
-        <h3>Donor's Registration in the World Blood Donation Society (WBDS)</h3>
+        <h2><strong>(Deletion Card)</strong></h2>
+        <h3>Deletion of Donor's Registration in World Blood Donation Society(WBDS)</h3>
         <br>
 
         <div>
@@ -56,21 +57,19 @@
         </div>
         <div class='reg-status'>
             <p>
-                <strong> Status: Registration Successful.
+                <strong> Status: Registration Deleted Successfully.
                 </strong>
             </p>
-            <p><strong>Date of Registration: {{ Auth::user()->created_at }}</strong></p>
+            <p><strong>Date of Deletion: {{ Auth::user()->created_at }}</strong></p>
             <p><strong>Note:</strong></p>
             <ol>
-                <li>Wait for a patient's call. Donate him/her blood and just after your donation, delete your registration.
-                    Deletion of registration is must.</li>
-                <li>For more donations in the future, opt for new registration.</li>
-                <li>Unuseful appearance of your profile can create great trouble for emergency patients. Your
-                    registration is valid only for six months and it will automatically be deleted after six months from the
-                    date of registration.</li>
+                <li>Take care of your health. Eat healthy diet and drink fresh fruit juices</li>
+                <li>Think of the kind and worthy result of your blood donation. Motivate others for blood donation.</li>
+                <li>For more donation in future, you may opt for new registration.</li>
             </ol>
             <p> <i class="fa-regular fa-face-smile"></i>
-                <strong>Thanks. You are a lifesaver. May God Bless You.</strong> <i class="fa-regular fa-face-smile"></i>
+                <strong>Thank you for your valuable contribution. May God Bless You.</strong> <i
+                    class="fa-regular fa-face-smile"></i>
             </p>
         </div>
 
@@ -78,9 +77,7 @@
 
     <div class="buttons">
         <input type="button" value="Print" onclick="window.print()">
-        <a href="/delete-profile">
-            <input type="button" value="Delete my profile">
-        </a>
+        <input type="button" value="Delete my profile">
 
     </div>
 

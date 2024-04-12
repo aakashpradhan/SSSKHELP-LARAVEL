@@ -283,18 +283,17 @@
                 @enderror
             </div>
 
-            <div class="flex items-center justify-end mt-4">
-                @if (Route::has('password.request'))
-                    <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                        href="{{ route('password.request') }}">
-                        {{ __('Forgot your password?') }}
-                    </a>
-                @endif
+            <div>
 
-                <button type="submit"
-                    class="inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 ms-3">
-                    {{ __('Log in') }}
-                </button>
+                <div class="login-form-sumbit">
+                    <input type="submit" value="{{ __('Log in') }}">
+                </div>
+                <div class="login-reg-block">
+                    <p>Don't have an account?</p>
+                    <p> <a href="{{ route('register') }}">Register Here</a>
+                    </p>
+                </div>
+
             </div>
         </form>
     </section>

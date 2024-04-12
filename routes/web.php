@@ -6,10 +6,6 @@ use App\Http\Controllers\Auth\RegisteredUserController;
 
 
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
-
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
@@ -22,6 +18,12 @@ Route::middleware('auth')->group(function () {
 Route::get('/', function () {
     return view('home');
 });
+
+
+Route::get('/donors-login', function () {
+    return view('donors-login');
+});
+
 
 Route::get('/about', function () {
     return view('about');
@@ -36,8 +38,12 @@ Route::get('/contact', function () {
 });
 
 
-Route::get('/delete-card', function () {
-    return view('delete-card');
+Route::get('/delete-profile', function () {
+    return view('delete-profile');
+});
+
+Route::get('/deletion-card', function () {
+    return view('deletion-card');
 });
 
 Route::get('/disclaimer', function () {

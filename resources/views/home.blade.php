@@ -56,7 +56,7 @@
             <h3>
                 For Donors Before Blood Donation
             </h3>
-            <a href="/donors-registration" class="button">
+            <a href="{{ route('register') }}" class="button">
                 Register as a Blood Donor
             </a>
         </div>

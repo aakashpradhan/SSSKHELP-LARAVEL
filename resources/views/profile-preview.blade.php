@@ -64,11 +64,11 @@
                 <input type="hidden" name="validatedData" value="{{ json_encode($validatedData) }}">
                 <input type="submit" value="Submit">
             </form>
-            <a class="button" href="/" class="">
-                Exit
+            <a href="/" class="">
+                <input type="button" value="Exit">
             </a>
-            <a class="button" href="{{ route('register') }}" class="">
-                Back
+            <a href="{{ route('register') }}" class="">
+                <input type="button" value="Back">
             </a>
         </div>
     </section>

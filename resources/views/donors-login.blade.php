@@ -4,7 +4,7 @@
 @section('content')
     <section id="donors-login" class="container">
         <h2>Login</h2>
-        <form action="{{ route('donors-login') }}" id="donors-login-form" method="POST">
+        <form action="" id="donors-login-form" method="POST">
             @csrf
 
             <div class="login-form-field">
@@ -286,7 +286,7 @@
             </div>
             <div class="login-reg-block">
                 <p>Don't have an account?</p>
-                <p> <a href="{{ route('donors-registration') }}">Register Here</a>
+                <p> <a href="">Register Here</a>
                 </p>
             </div>
 

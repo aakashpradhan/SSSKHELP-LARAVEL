@@ -364,17 +364,14 @@
             </div>
 
 
-            <div>
-                <a class="button" href="{{ route('login') }}" class="">
-                    Back
+            <div class="buttons">
+
+
+                <a href="/" class="">
+                    <input type="button" value="Exit">
                 </a>
 
-                <a class="button" href="/" class="">
-                    Exit
-                </a>
-                <button type="submit" class="button">
-                    Next
-                </button>
+                <input type="submit" value="Next">
             </div>
         </form>
     </section>
